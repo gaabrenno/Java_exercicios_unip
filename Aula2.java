@@ -12,7 +12,7 @@ public class Aula2 {
         if (irmaos >= 2) {
             System.out.print("Você terá desconto de 10%!");
         } else {
-            System.out.print("Você não terá desconto!");
+            System.out.print("Que pena! Você não terá desconto!");
         }
     }
 
