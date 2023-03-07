@@ -13,6 +13,5 @@ public class Aula2ofi {
             }
             else{
                 System.out.print("Você não terá desconto!");
-
         }
     }
