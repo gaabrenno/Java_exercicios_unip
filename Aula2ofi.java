@@ -2,8 +2,6 @@ package lpoo.aula1;
 import javax.swing.JOptionPane;
 
 public class Aula2ofi {
-
-
         public static void quantIrmaos (){
             int irmaos;
 
@@ -16,8 +14,5 @@ public class Aula2ofi {
             else{
                 System.out.print("Você não terá desconto!");
 
-        public static void main(String[]Object args;
-                args){
-            quantIrmaos();
         }
     }
