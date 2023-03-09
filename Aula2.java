@@ -16,7 +16,24 @@ public class Aula2 {
         }
     }
 
-    public static void main(String[] args) {
-        quantIrmaos();
+    public static void turma(){
+        int quanTurma;
+
+        String lequanTurma = JOptionPane.showInputDialog("Insira a quantidade de alunos na nurma:");
+        quanTurma = Integer.parseInt(lequanTurma);
+
+        if (quanTurma > 30){
+            System.out.print("Parabêns! Sua turma tem "+quanTurma+" alunos. Vocês irão para Cancun!");
+        } else if (quanTurma == 30){
+            System.out.print("Parabêns! Sua turma tem "+quanTurma+" alunos. Vocês irão para Fortaleza!");
+        }
+        else {
+            System.out.print("Parabêns! Sua turma tem "+quanTurma+" alunos. Vocês irão para Caldas Novas!");
+            }
     }
+
+    public static void main(String[] args) {
+        turma();
+    }
+
 }
