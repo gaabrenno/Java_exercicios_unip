@@ -43,20 +43,20 @@ public class Aula2 {
         } else if (valor == 150.00) {
             desc = (float) (valor - (valor * 0.07));
             System.out.print("Você teve 7% de desconto, você irá pagar: " + desc);
-        }else {
+        } else {
             desc = (float) (valor - (valor * 0.04));
             System.out.print("Você teve 4% de desconto, você irá pagar: " + desc);
         }
 
     }
 
-    public static void multa(){
+    public static void multa() {
         int multas;
 
         String lemultas = JOptionPane.showInputDialog("Insira a quantidade de multas em um ano:");
         multas = Integer.parseInt(lemultas);
 
-        if (multas > 5){
+        if (multas > 5) {
             System.out.print("Você até pode ser uma boa pessoa, mas não um bom motorista!");
         } else if (multas == 5) {
             System.out.print("Você dirige bem, mas precisa prestar mais atenção!");
@@ -64,13 +64,15 @@ public class Aula2 {
             System.out.print("Parabéns! Você é um bom motorista!");
         }
 
-    }    public static void festa(){
+    }
+
+    public static void festa() {
         int noite;
 
         String lenoite = JOptionPane.showInputDialog("Insira a quantidade de amigos que você encontrou na festa:");
         noite = Integer.parseInt(lenoite);
 
-        if (noite > 5){
+        if (noite > 5) {
             System.out.print("Você é popular!");
         } else if (noite == 5) {
             System.out.print("Você é uma pessoa normal!");
@@ -80,7 +82,7 @@ public class Aula2 {
 
     }
 
-    public static void media (){
+    public static void media() {
         float n1, n2, n3, n4, soma, media;
         String aluno;
 
@@ -97,12 +99,56 @@ public class Aula2 {
         soma = n1 + n2 + n3 + n4;
         media = soma / 4;
 
-        System.out.print("A média do aluno "+aluno+" é: "+media);
+        System.out.print("A média do aluno " + aluno + " é: " + media);
+
+    }
+
+    public static void prova() {
+        String turma;
+
+        turma = JOptionPane.showInputDialog("Insira sua turma:");
+
+/*        if ((turma == "Computação") || (turma == "computação") || (turma == "computacao") || (turma == "Computacao")) {
+            System.out.print("Sua prova será dia 10/05/2023 na sala 208D no bloco D");
+        } else {
+            System.out.print("Sua prova não esta marcada ainda!");
+        }*/
+        switch (turma){
+            case "Computação":
+                System.out.print("Sua prova será dia 05/05/2023, às 19h10, na sala 212D do bloco D2");
+                break;
+            case "computação":
+                System.out.print("Sua prova será dia 05/05/2023, às 19h10, na sala 212D do bloco D2");
+                break;
+            case "computacao":
+                System.out.print("Sua prova será dia 05/05/2023, às 19h10, na sala 212D do bloco D2");
+                break;
+            case "Computacao":
+                System.out.print("Sua prova será dia 05/05/2023, às 19h10, na sala 212D do bloco D2");
+                break;
+            default:
+                System.out.print("Sua prova ainda não está marcada");
+        }
+    }
+
+    public static void iptu() {
+        int numcasa;
+
+        String lenumcasa = JOptionPane.showInputDialog("Insira o número da sua casa:");
+        numcasa = Integer.parseInt(lenumcasa);
+
+        if (numcasa > 65) {
+            System.out.print("Seu IPTU será parcelado em até 3x!");
+        } else if (numcasa == 65) {
+            System.out.print("Seu IPTU será parcelado em até 2x!");
+        } else {
+            System.out.print("Seu IPTU deverá ser pago a vista!");
+        }
 
     }
 
     public static void main(String[] args) {
-        media();
+        iptu();
     }
 
 }
