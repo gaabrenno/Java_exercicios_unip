@@ -26,20 +26,9 @@ public class Aula3 {
     }
 
 
-    public static void main(String[] args) {
-        compra();
-    }
-
-
     public class Pluralizador {
 
         private static final Map<String, String> EXCECOES = new HashMap<>();
-        static {
-            EXCECOES.put("pão", "pães");
-            EXCECOES.put("mão", "mãos");
-            EXCECOES.put("cão", "cães");
-            // Adicione aqui outras exceções conforme necessário
-        }
 
         public static String pluralize(String palavra) {
             /*
@@ -77,6 +66,40 @@ public class Aula3 {
                 return palavra + "s";
             }
         }
+
+        static {
+            EXCECOES.put("pão", "pães");
+            EXCECOES.put("mão", "mãos");
+            EXCECOES.put("cão", "cães");
+            // Adicione aqui outras exceções conforme necessário
+        }
     }
+
+    public static void soma9999() {
+        float num = 0, soma = 0, media = 0;
+        int contador = 0;
+        String input = "";
+
+        while (!input.equals("9999")) {
+            input = JOptionPane.showInputDialog("Insira o número a ser somado (digite 9999 para parar):");
+            if (!input.equals("9999")) {
+                num = Float.parseFloat(input);
+                soma += num;
+                contador++;
+            }
+        }
+
+        if (contador > 0) {
+            media = soma / contador;
+            System.out.print("A média é: " + media);
+        } else {
+            System.out.print("Nenhum número foi digitado.");
+        }
+    }
+
+    public static void main(String[] args) {
+        soma9999();
+    }
+
 
 }
