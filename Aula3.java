@@ -132,7 +132,7 @@ public class Aula3 {
 
     public static void aumento(){
         String nome,cpf, lesalario;
-        float salario, aument;
+        float salario, aument, nsalario = 0;
         Integer contator = 0, tempo = 6;
 
         nome=JOptionPane.showInputDialog("Insira seu nome:");
@@ -146,9 +146,11 @@ public class Aula3 {
             if (contator==0){
                 JOptionPane.showMessageDialog(null, "Neste mês seu salario ainda é o normal! Ou seja R$"+salario+"!");
             } else {
+                salario=salario+aument;
                 JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + salario+".");
+
             }
-            salario = salario+aument;
+            //salario = salario+aument;
             contator=contator+1;
 
         }
