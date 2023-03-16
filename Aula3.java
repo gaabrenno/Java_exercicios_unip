@@ -139,13 +139,14 @@ public class Aula3 {
         cpf=JOptionPane.showInputDialog("Insira seu CPF:");
         lesalario=JOptionPane.showInputDialog("Insira o valor do seu salario atual:");
         salario=Float.parseFloat(lesalario);
+        aument= (float)(salario*0.07);
 
         while (contator <=tempo){
-            aument= (float)(salario*0.07);
+
             if (contator==0){
                 JOptionPane.showMessageDialog(null, "Neste mês seu salario ainda é o normal! Ou seja R$"+salario+"!");
             } else {
-                JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + aument+".");
+                JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + salario+".");
             }
             salario = salario+aument;
             contator=contator+1;
