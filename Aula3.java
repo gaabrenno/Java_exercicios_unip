@@ -5,6 +5,7 @@ import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.Integer;
 
 import static lpoo.aula1.Aula3.Pluralizador.pluralize;
 
@@ -129,8 +130,31 @@ public class Aula3 {
 
     }
 
+    public static void aumento(){
+        String nome,cpf, lesalario;
+        float salario, aument;
+        Integer contator = null, tempo = 6;
+
+        nome=JOptionPane.showInputDialog("Insira seu nome:");
+        cpf=JOptionPane.showInputDialog("Insira seu CPF:");
+        lesalario=JOptionPane.showInputDialog("Insira o valor do seu salario atual:");
+        salario=Float.parseFloat(lesalario);
+
+        while (contator < tempo){
+            aument= (float) (salario*0.7);
+            if (contator<0){
+                JOptionPane.showMessageDialog(null, "Neste mês seu salario ainda é o normal! Ou seja R$"+salario+"!");
+            } else {
+                JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + aument+".");
+            }
+            contator=contator+1;
+
+        }
+
+    }
+
     public static void main(String[] args) {
-        semestre();
+        aumento();
     }
 
 
