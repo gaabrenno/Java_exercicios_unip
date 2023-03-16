@@ -97,8 +97,40 @@ public class Aula3 {
         }
     }
 
+    public static void semestre(){
+        float np1, np2, inst, exame, media, soma;
+
+        String lenp1 = JOptionPane.showInputDialog("Insira o valor da NP1:");
+        np1=Float.parseFloat(lenp1);
+        String leinst = JOptionPane.showInputDialog("Insira o valor da Institucional:");
+        inst=Float.parseFloat(lenp1);
+        String lenp2 = JOptionPane.showInputDialog("Insira o valor da NP2:");
+        np2=Float.parseFloat(lenp1);
+        soma=(np1*3)+(np2*3)+(inst*4);
+        media=soma/10;
+
+        if (media>=7){
+           JOptionPane.showMessageDialog(null,"Parabéns você foi aprovado!!!");
+        }else {
+            JOptionPane.showMessageDialog(null,"Você ficou de exame!");
+            String leexame = JOptionPane.showInputDialog("Insira o valor do Exame:");
+            exame = Float.parseFloat(leexame);
+            media=(media+exame)/2;
+
+            JOptionPane.showMessageDialog(null,"Sua média final é: "+media);
+            if (media<5){
+                JOptionPane.showMessageDialog(null, "Você está reprovado!");
+            }else {
+                JOptionPane.showMessageDialog(null, "Você esta aprovado!");
+            }
+        }
+
+
+
+    }
+
     public static void main(String[] args) {
-        soma9999();
+        semestre();
     }
 
 
