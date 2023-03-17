@@ -148,7 +148,7 @@ public class Aula3 {
             } else {
                 salario=salario+aument;
                 JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + salario+".");
-
+                aument= (float)(salario*0.07);
             }
             //salario = salario+aument;
             contator=contator+1;
