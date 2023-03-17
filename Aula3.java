@@ -98,67 +98,95 @@ public class Aula3 {
         }
     }
 
-    public static void semestre(){
+    public static void semestre() {
         float np1, np2, inst, exame, media, soma;
 
         String lenp1 = JOptionPane.showInputDialog("Insira o valor da NP1:");
-        np1=Float.parseFloat(lenp1);
+        np1 = Float.parseFloat(lenp1);
         String leinst = JOptionPane.showInputDialog("Insira o valor da Institucional:");
-        inst=Float.parseFloat(lenp1);
+        inst = Float.parseFloat(lenp1);
         String lenp2 = JOptionPane.showInputDialog("Insira o valor da NP2:");
-        np2=Float.parseFloat(lenp1);
-        soma=(np1*3)+(np2*3)+(inst*4);
-        media=soma/10;
+        np2 = Float.parseFloat(lenp1);
+        soma = (np1 * 3) + (np2 * 3) + (inst * 4);
+        media = soma / 10;
 
-        if (media>=7){
-           JOptionPane.showMessageDialog(null,"Parabéns você foi aprovado!!!");
-        }else {
-            JOptionPane.showMessageDialog(null,"Você ficou de exame!");
+        if (media >= 7) {
+            JOptionPane.showMessageDialog(null, "Parabéns você foi aprovado!!!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Você ficou de exame!");
             String leexame = JOptionPane.showInputDialog("Insira o valor do Exame:");
             exame = Float.parseFloat(leexame);
-            media=(media+exame)/2;
+            media = (media + exame) / 2;
 
-            JOptionPane.showMessageDialog(null,"Sua média final é: "+media);
-            if (media<5){
+            JOptionPane.showMessageDialog(null, "Sua média final é: " + media);
+            if (media < 5) {
                 JOptionPane.showMessageDialog(null, "Você está reprovado!");
-            }else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Você esta aprovado!");
             }
         }
 
 
-
     }
 
-    public static void aumento(){
-        String nome,cpf, lesalario;
+    public static void aumento() {
+        String nome, cpf, lesalario;
         float salario, aument, nsalario = 0;
         Integer contator = 0, tempo = 6;
 
-        nome=JOptionPane.showInputDialog("Insira seu nome:");
-        cpf=JOptionPane.showInputDialog("Insira seu CPF:");
-        lesalario=JOptionPane.showInputDialog("Insira o valor do seu salario atual:");
-        salario=Float.parseFloat(lesalario);
-        aument= (float)(salario*0.07);
+        nome = JOptionPane.showInputDialog("Insira seu nome:");
+        cpf = JOptionPane.showInputDialog("Insira seu CPF:");
+        lesalario = JOptionPane.showInputDialog("Insira o valor do seu salario atual:");
+        salario = Float.parseFloat(lesalario);
+        aument = (float) (salario * 0.07);
 
-        while (contator <=tempo){
+        while (contator <= tempo) {
 
-            if (contator==0){
-                JOptionPane.showMessageDialog(null, "Neste mês seu salario ainda é o normal! Ou seja R$"+salario+"!");
+            if (contator == 0) {
+                JOptionPane.showMessageDialog(null, "Neste mês seu salario ainda é o normal! Ou seja R$" + salario + "!");
             } else {
-                salario=salario+aument;
-                JOptionPane.showMessageDialog(null, nome+", este é o "+contator+"º mês de almento de 6! Você receberá: R$" + salario+".");
-                aument= (float)(salario*0.07);
+                salario = salario + aument;
+                JOptionPane.showMessageDialog(null, nome + ", este é o " + contator + "º mês de almento de 6! Você receberá: R$" + salario + ".");
+                aument = (float) (salario * 0.07);
             }
-            //salario = salario+aument;
-            contator=contator+1;
+            contator = contator + 1;
 
         }
 
     }
 
+    public static void financiamento() {
+        String car, ano;
+        float valor, aument, valor2, juros = 0;
+        Integer contator = 0, prestacoes;
+
+        car = JOptionPane.showInputDialog("Insira o modelo do carro:");
+        ano = JOptionPane.showInputDialog("Insira ano do modelo:");
+        String leprestacoes = JOptionPane.showInputDialog("Insira a quantidade de prestaçoes:");
+        prestacoes = Integer.parseInt(leprestacoes);
+        String levalor = JOptionPane.showInputDialog("Insira o valor do carro:");
+        valor = Float.parseFloat(levalor);
+        valor2 = Float.parseFloat(levalor);
+        aument = (float) (valor * 0.015);
+
+        while (contator <= prestacoes) {
+
+            valor = valor + aument;
+            aument = (float) (valor * 0.015);
+            valor2++;
+            juros = valor - valor2;
+            contator = contator + 1;
+
+        }
+        JOptionPane.showMessageDialog(null, "Parabéns por sua nova aquisição! O carro " + car + " foi financiado em " + prestacoes + "! Ao fim do financiamento você deverá pagar " + valor + "! Sendo " +juros+ " de juros e " + valor2 + " do valor do carro!");
+
+    }
+
+
+
     public static void main(String[] args) {
-        aumento();
+        
+        financiamento();
     }
 
 
