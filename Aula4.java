@@ -12,10 +12,17 @@ public class Aula4 {
         JOptionPane.showMessageDialog(null, "O resultado final é: " + soma);
     }
 
+    public static void quadrado(){
+        int nun, quadrado;
 
+        for (nun = 1; nun<=10; nun++){
+            quadrado = nun*nun;
+            JOptionPane.showMessageDialog(null,"O quadrado de "+nun+" é:"+quadrado);
+        }
+    }
 
     public static void main(String[]args){
 
-        somaSub();
+        quadrado();
     }
 }
