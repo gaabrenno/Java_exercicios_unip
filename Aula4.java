@@ -51,6 +51,19 @@ public class Aula4 {
         }
     }
 
+    public static void consorcio(){
+        double valor, juros, soma, periodo;
+        int contador, participantes;
+        String leValor, leJuros, lePeriodo, leParticipantes;
+
+        leValor = JOptionPane.showInputDialog("Insira o valor do consorcio:");
+        valor = Double.parseDouble(leValor);
+
+        leParticipantes = JOptionPane.showInputDialog("Insira a quantidade de participantes:");
+        participantes = Integer.parseInt(leParticipantes);
+        //incompleto
+    }
+
     public static void main(String[] args) {
 
         resto();
