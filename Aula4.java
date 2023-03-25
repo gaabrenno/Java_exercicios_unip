@@ -51,21 +51,33 @@ public class Aula4 {
         }
     }
 
-    public static void consorcio(){
-        double valor, juros, soma, periodo;
-        int contador, participantes;
-        String leValor, leJuros, lePeriodo, leParticipantes;
+    public static void consorcio() {
+        double valor, juros, soma, periodo, valorJuros;
+        int contador = 0, participantes;
+        String leValor, lePeriodo, leParticipantes;
 
         leValor = JOptionPane.showInputDialog("Insira o valor do consorcio:");
         valor = Double.parseDouble(leValor);
 
-        leParticipantes = JOptionPane.showInputDialog("Insira a quantidade de participantes:");
+        leParticipantes = JOptionPane.showInputDialog("Insira a quantidade de participantes: (O número de participantes implicará diretamente no periodo de vigencia do consórcio!)");
         participantes = Integer.parseInt(leParticipantes);
-        //incompleto
+
+        for (contador = 1; contador < participantes; contador++) {
+
+            if (contador == 1) {
+                JOptionPane.showMessageDialog(null, contador + "º mês:" + (valor * participantes));
+            } else {
+                valor = valor * 1.02;
+                juros = valor * 10;
+                JOptionPane.showMessageDialog(null, contador + "º mês: " + juros);
+            }
+            contador++;
+        }
+
     }
 
     public static void main(String[] args) {
 
-        resto();
+        consorcio();
     }
 }
