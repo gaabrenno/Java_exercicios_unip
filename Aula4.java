@@ -76,6 +76,30 @@ public class Aula4 {
 
     }
 
+/*    versão do chatGPT
+        public static void consorcio() {
+        double valor, juros, soma, periodo, valorJuros;
+        int contador = 0, participantes;
+        String leValor, lePeriodo, leParticipantes;
+
+        leValor = JOptionPane.showInputDialog("Insira o valor do consorcio:");
+        valor = Double.parseDouble(leValor);
+
+        leParticipantes = JOptionPane.showInputDialog("Insira a quantidade de participantes: (O número de participantes implicará diretamente no periodo de vigencia do consórcio!)");
+        participantes = Integer.parseInt(leParticipantes);
+
+        for (contador = 0; contador < participantes; contador++) {
+            if (contador == 0) {
+                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + (valor / participantes));
+            } else {
+                valorJuros = valor * 0.02;
+                valor += valorJuros;
+                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + (valor / participantes));
+            }
+        }
+    }*/
+
+
     public static void main(String[] args) {
 
         consorcio();
