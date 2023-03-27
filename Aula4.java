@@ -77,12 +77,12 @@ public class Aula4 {
     public static void cubo() {
         int nun, cubo = 0;
 
-        for (nun = 1; nun<20; nun++) {
+        for (nun = 1; nun<=20; nun++) {
             if (nun % 2 == 1){
-                cubo = nun*3;
+                cubo = (int) Math.pow(nun,3);
                 JOptionPane.showMessageDialog(null, "O cubo de "+nun+" é: "+cubo);
-            }else{
-                JOptionPane.showMessageDialog(null,nun+" não é impar!");
+            }else {
+                JOptionPane.showMessageDialog(null, nun+" é par!");
             }
         }
 
