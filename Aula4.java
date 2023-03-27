@@ -51,33 +51,8 @@ public class Aula4 {
         }
     }
 
+
     public static void consorcio() {
-        double valor, juros, soma, periodo, valorJuros;
-        int contador = 0, participantes;
-        String leValor, lePeriodo, leParticipantes;
-
-        leValor = JOptionPane.showInputDialog("Insira o valor do consorcio:");
-        valor = Double.parseDouble(leValor);
-
-        leParticipantes = JOptionPane.showInputDialog("Insira a quantidade de participantes: (O número de participantes implicará diretamente no periodo de vigencia do consórcio!)");
-        participantes = Integer.parseInt(leParticipantes);
-
-        for (contador = 1; contador < participantes; contador++) {
-
-            if (contador == 1) {
-                JOptionPane.showMessageDialog(null, contador + "º mês:" + (valor * participantes));
-            } else {
-                valor = valor * 1.02;
-                juros = valor * 10;
-                JOptionPane.showMessageDialog(null, contador + "º mês: " + juros);
-            }
-            contador++;
-        }
-
-    }
-
-/*    versão do chatGPT
-        public static void consorcio() {
         double valor, juros, soma, periodo, valorJuros;
         int contador = 0, participantes;
         String leValor, lePeriodo, leParticipantes;
@@ -90,18 +65,31 @@ public class Aula4 {
 
         for (contador = 0; contador < participantes; contador++) {
             if (contador == 0) {
-                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + (valor / participantes));
+                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + valor);
             } else {
                 valorJuros = valor * 0.02;
                 valor += valorJuros;
-                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + (valor / participantes));
+                JOptionPane.showMessageDialog(null, contador + 1 + "º mês: " + valor);
             }
         }
-    }*/
+    }
 
+    public static void cubo() {
+        int nun, cubo = 0;
+
+        for (nun = 1; nun<20; nun++) {
+            if (nun % 2 == 1){
+                cubo = nun*3;
+                JOptionPane.showMessageDialog(null, "O cubo de "+nun+" é: "+cubo);
+            }else{
+                JOptionPane.showMessageDialog(null,nun+" não é impar!");
+            }
+        }
+
+    }
 
     public static void main(String[] args) {
 
-        consorcio();
+        cubo();
     }
 }
