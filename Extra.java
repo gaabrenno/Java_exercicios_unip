@@ -26,13 +26,13 @@ public class Extra {
     public static void viagem() {
         float orc1[] = new float[2];
         float orc2[] = new float[2];
-        float diariaOrc1,diariaOrc2;
+        float diariaOrc1, diariaOrc2;
         int diaria;
 
-        String destino= JOptionPane.showInputDialog("Insira seu destino:");
-        for (int contador = 0; contador<2; contador++){
+        String destino = JOptionPane.showInputDialog("Insira seu destino:");
+        for (int contador = 0; contador < 2; contador++) {
             String leOrc1 = JOptionPane.showInputDialog("Insira o valor da fidelidade e da diaria do 1º orçamento:");
-            orc1[contador]=Float.parseFloat(leOrc1);
+            orc1[contador] = Float.parseFloat(leOrc1);
         }
 
         for (int contador = 0; contador < 2; contador++) {
@@ -42,16 +42,16 @@ public class Extra {
         String lediaria = JOptionPane.showInputDialog("Quantos dias passará em" + destino + "?");
         diaria = Integer.parseInt(lediaria);
 
-        diariaOrc1 = orc1[1]*diaria;
-        diariaOrc2 = orc2[1]*diaria;
+        diariaOrc1 = orc1[1] * diaria;
+        diariaOrc2 = orc2[1] * diaria;
 
-        float totalOrc1 = diariaOrc1+orc1[0];
-        float totalOrc2 = diariaOrc2+orc2[0];
+        float totalOrc1 = diariaOrc1 + orc1[0];
+        float totalOrc2 = diariaOrc2 + orc2[0];
 
-        if (totalOrc1<totalOrc2){
-            JOptionPane.showMessageDialog(null,"O primeiro orçamento esta saindo R$"+(totalOrc1-totalOrc2)+"mais barato que o segundo!");
-        }else {
-            JOptionPane.showMessageDialog(null,"O segundo orçamento esta saindo R$"+(totalOrc1-totalOrc2)+"mais barato que o primeiro!");
+        if (totalOrc1 < totalOrc2) {
+            JOptionPane.showMessageDialog(null, "O primeiro orçamento esta saindo R$" + (totalOrc1 - totalOrc2) + "mais barato que o segundo!");
+        } else {
+            JOptionPane.showMessageDialog(null, "O segundo orçamento esta saindo R$" + (totalOrc1 - totalOrc2) + "mais barato que o primeiro!");
         }
 
     }
@@ -96,21 +96,38 @@ public class Extra {
 
     }
 
-    public static void dAq(){
+    public static void dAq() {
         int nun, dobro, triplo, quadruplo, quinduplo;
 
         String leNun = JOptionPane.showInputDialog("Insira um número aleatorio:");
         nun = Integer.parseInt(leNun);
 
-        dobro = nun*2;
-        triplo = nun*3;
-        quadruplo = nun*4;
-        quinduplo = nun*5;
+        dobro = nun * 2;
+        triplo = nun * 3;
+        quadruplo = nun * 4;
+        quinduplo = nun * 5;
 
-        JOptionPane.showMessageDialog(null,"O dobro, triplo, quadruplo e quinduplo de "+nun+" é: "+dobro+", "+triplo+", "+quadruplo+" e "+quinduplo+" consecutivamente!");
+        JOptionPane.showMessageDialog(null, "O dobro, triplo, quadruplo e quinduplo de " + nun + " é: " + dobro + ", " + triplo + ", " + quadruplo + " e " + quinduplo + " consecutivamente!");
     }
 
+
+    public static void resultadoArray() {
+        int[] numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int resultado = 0;
+
+        for (int i = 0; i < numeros.length; i++) {
+            if (i % 2 == 0) {
+                resultado += numeros[i];
+            } else {
+                resultado -= numeros[i];
+            }
+        }
+
+        JOptionPane.showMessageDialog(null,"O resultado de 1-2+3-4+5-6+7-8+9-10 é: "+resultado);
+    }
+
+
     public static void main(String[] args) {
-        dAq();
+        resultadoArray();
     }
 }
