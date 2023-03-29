@@ -110,9 +110,24 @@ public class Extra {
         JOptionPane.showMessageDialog(null, "O dobro, triplo, quadruplo e quinduplo de " + nun + " é: " + dobro + ", " + triplo + ", " + quadruplo + " e " + quinduplo + " consecutivamente!");
     }
 
+    public static void desconto() {
+        float produto[] = new float[6];
+        float desconto[] = {0.03F, 0.035F, 0.042F, 0.0475F, 0.512F, 0.523F };
+        float valorFinal[]= new float[6];
+
+        for(int contador=0; contador<6; contador++){
+            String leProduto = JOptionPane.showInputDialog("Insira o valor do produto:");
+            produto[contador]=Float.parseFloat(leProduto);
+        }
+
+        for(int contador=0; contador<6; contador++){
+            valorFinal[contador]=produto[contador]-(produto[contador]*desconto[contador]);
+            JOptionPane.showMessageDialog(null,"O valor final do "+(contador+1)+" é: "+valorFinal[contador]);
+        }
+    }
 
     public static void resultadoArray() {
-        int[] numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int resultado = 0;
 
         for (int i = 0; i < numeros.length; i++) {
@@ -123,11 +138,13 @@ public class Extra {
             }
         }
 
-        JOptionPane.showMessageDialog(null,"O resultado de 1-2+3-4+5-6+7-8+9-10 é: "+resultado);
+        JOptionPane.showMessageDialog(null, "O resultado de 1-2+3-4+5-6+7-8+9-10 é: " + resultado);
     }
 
 
     public static void main(String[] args) {
-        resultadoArray();
+
+        desconto();
+
     }
 }

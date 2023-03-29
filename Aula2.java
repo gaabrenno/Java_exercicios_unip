@@ -108,11 +108,6 @@ public class Aula2 {
 
         turma = JOptionPane.showInputDialog("Insira sua turma:");
 
-/*        if ((turma == "Computação") || (turma == "computação") || (turma == "computacao") || (turma == "Computacao")) {
-            System.out.print("Sua prova será dia 10/05/2023 na sala 208D no bloco D");
-        } else {
-            System.out.print("Sua prova não esta marcada ainda!");
-        }*/
         switch (turma){
             case "Computação":
                 System.out.print("Sua prova será dia 05/05/2023, às 19h10, na sala 212D do bloco D2");

@@ -26,7 +26,8 @@ public class Aula3 {
 
     }
 
-
+/*    A classe a baixo foi gerada pelo ChatGPT, com o intuito de auxiliar na curiosidade de se daria certo ou não
+    obs.: A essa classe está em sua 4 refatoração, pois sempre encontro algo que precisava melhorar, por ultimo foi adicionado uma parte para as eceções, que seram usadas*/
     public class Pluralizador {
 
         private static final Map<String, String> EXCECOES = new HashMap<>();
@@ -178,14 +179,13 @@ public class Aula3 {
             contator = contator + 1;
 
         }
-        JOptionPane.showMessageDialog(null, "Parabéns por sua nova aquisição! O carro " + car + " foi financiado em " + prestacoes + "! Ao fim do financiamento você deverá pagar " + valor + "! Sendo " +juros+ " de juros e " + valor2 + " do valor do carro!");
+        JOptionPane.showMessageDialog(null, "Parabéns por sua nova aquisição! O carro " + car + " foi financiado em " + prestacoes + "! Ao fim do financiamento você deverá pagar " + valor + "! Sendo " + juros + " de juros e " + valor2 + " do valor do carro!");
 
     }
 
 
-
     public static void main(String[] args) {
-        
+
         financiamento();
     }
 
