@@ -96,8 +96,21 @@ public class Extra {
 
     }
 
+    public static void dAq(){
+        int nun, dobro, triplo, quadruplo, quinduplo;
+
+        String leNun = JOptionPane.showInputDialog("Insira um número aleatorio:");
+        nun = Integer.parseInt(leNun);
+
+        dobro = nun*2;
+        triplo = nun*3;
+        quadruplo = nun*4;
+        quinduplo = nun*5;
+
+        JOptionPane.showMessageDialog(null,"O dobro, triplo, quadruplo e quinduplo de "+nun+" é: "+dobro+", "+triplo+", "+quadruplo+" e "+quinduplo+" consecutivamente!");
+    }
 
     public static void main(String[] args) {
-        viagem();
+        dAq();
     }
 }
