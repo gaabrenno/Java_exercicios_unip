@@ -1,6 +1,7 @@
 package lpoo.aula1;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class Extra {
 
@@ -112,18 +113,55 @@ public class Extra {
 
     public static void desconto() {
         float produto[] = new float[6];
-        float desconto[] = {0.03F, 0.035F, 0.042F, 0.0475F, 0.512F, 0.523F };
-        float valorFinal[]= new float[6];
+        float desconto[] = {0.03F, 0.035F, 0.042F, 0.0475F, 0.512F, 0.523F};
+        float valorFinal[] = new float[6];
 
-        for(int contador=0; contador<6; contador++){
+        for (int contador = 0; contador < 6; contador++) {
             String leProduto = JOptionPane.showInputDialog("Insira o valor do produto:");
-            produto[contador]=Float.parseFloat(leProduto);
+            produto[contador] = Float.parseFloat(leProduto);
         }
 
-        for(int contador=0; contador<6; contador++){
-            valorFinal[contador]=produto[contador]-(produto[contador]*desconto[contador]);
-            JOptionPane.showMessageDialog(null,"O valor final do "+(contador+1)+" é: "+valorFinal[contador]);
+        for (int contador = 0; contador < 6; contador++) {
+            valorFinal[contador] = produto[contador] - (produto[contador] * desconto[contador]);
+            JOptionPane.showMessageDialog(null, "O valor final do " + (contador + 1) + " é: " + valorFinal[contador]);
         }
+    }
+
+    public static void idade() {
+        Scanner c = new Scanner(System.in);
+        int contador = 0, anoAtual = 2023;
+        System.out.println("Insira o número de entradas:");
+        int numEntradas = c.nextInt();
+        String nome[] = new String[numEntradas];
+        int ano[] = new int[numEntradas];
+
+        /*Não consegui colocar para o programa parar com 0000 então utilizei essa estrategia (a baixo) para
+         * conseguir ter o controle*/
+        while (contador < numEntradas) {
+
+            System.out.println("Informe o nome:");
+            nome[contador] = c.next();
+            System.out.println("Informe o ano de nascimento:");
+            ano[contador] = c.nextInt() - anoAtual;
+            contador++;
+        }
+
+        while (contador < numEntradas) {
+            contador = 0;
+            if (ano[contador] < 18) {
+                System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é menor de 18 anos!");
+            } else if (ano[contador] < 30) {
+                System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é maior de 18 anos e menor de 30!");
+            } else if (ano[contador] < 50) {
+                System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é maior de 30 anos e menor de 50!");
+            } else if (ano[contador] < 80) {
+                System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é maior de 50 anos e menor de 80!");
+            } else {
+                System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é maior de 80 anos!");
+            }
+            contador++;
+        }
+
     }
 
     public static void resultadoArray() {
@@ -141,10 +179,9 @@ public class Extra {
         JOptionPane.showMessageDialog(null, "O resultado de 1-2+3-4+5-6+7-8+9-10 é: " + resultado);
     }
 
-
     public static void main(String[] args) {
 
-        desconto();
+        idade();
 
     }
 }
