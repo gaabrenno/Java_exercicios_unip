@@ -58,11 +58,12 @@ public class Extra {
     }
 
     public static void telefone() {
-        float juros, valorTelefone;
-        int mes = 0, contador;
+        float juros, valorTelefone, valorTelefone2;
+        int mes = 0, contador, contador2 = 1;
 
         String leValor = JOptionPane.showInputDialog("Informe o valor de sua conta telefonica:");
         valorTelefone = Float.parseFloat(leValor);
+        valorTelefone2 = Float.parseFloat(leValor);
         juros = (float) (valorTelefone * 0.03);
 
         for (contador = 3; mes < contador; mes++) {
@@ -85,12 +86,15 @@ public class Extra {
 
         }
 
-        while (valorTelefone < (valorTelefone * 2)) {
+
+        while (valorTelefone2 < (valorTelefone2 * 2)) {
             valorTelefone = valorTelefone + juros;
-            juros = (float) (valorTelefone * 0.03);
-            contador++;
-            if (valorTelefone < (valorTelefone * 2)) {
-                System.out.println("No mês  " + contador + " o valor terá dobrado, ou seja, estara a " + (valorTelefone * 2));
+            juros = (float) (valorTelefone2 * 0.03);
+            ++contador2;
+            System.out.println(contador2);
+            if (valorTelefone < (valorTelefone2 * 2)) {
+                System.out.println("No mês  " + contador2 + " o valor terá dobrado, ou seja, estara a " + (valorTelefone2 * 2));
+                break;
             }
 
         }
@@ -142,12 +146,12 @@ public class Extra {
             System.out.println("Informe o nome:");
             nome[contador] = c.next();
             System.out.println("Informe o ano de nascimento:");
-            ano[contador] = c.nextInt() - anoAtual;
+            ano[contador] = anoAtual - c.nextInt();
             contador++;
         }
 
+        contador = 0;
         while (contador < numEntradas) {
-            contador = 0;
             if (ano[contador] < 18) {
                 System.out.println(nome[contador] + " tem " + ano[contador] + " anos, logo, é menor de 18 anos!");
             } else if (ano[contador] < 30) {
